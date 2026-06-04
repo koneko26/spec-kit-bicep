@@ -1,18 +1,22 @@
 # Support
 
-## How to get help
+> 本リポジトリは [github/spec-kit](https://github.com/github/spec-kit) の**非公式フォーク**です。
 
-Please search existing [issues](https://github.com/github/spec-kit/issues) and [discussions](https://github.com/github/spec-kit/discussions) before creating new ones to avoid duplicates.
+## このフォーク（Bicep SI Kit）について
 
-- Review the [README](./README.md) for getting started instructions and troubleshooting tips
-- Check the [comprehensive guide](./spec-driven.md) for detailed documentation on the Spec-Driven Development process
-- Ask in [GitHub Discussions](https://github.com/github/spec-kit/discussions) for questions about using Spec Kit or the Spec-Driven Development methodology
-- Open a [GitHub issue](https://github.com/github/spec-kit/issues/new) for bug reports and feature requests
+`bicep` Extension / `bicep-si` Preset に関する不具合・要望は、このフォークのリポジトリへ。
 
-## Project Status
+- 課題: [koneko26/spec-kit-bicep の Issues](https://github.com/koneko26/spec-kit-bicep/issues)
+- まず [README](./README.md)、[extensions/bicep/README.md](extensions/bicep/README.md)、[presets/bicep-si/README.md](presets/bicep-si/README.md) を確認してください。
 
-**Spec Kit** is under active development and maintained by GitHub staff and the community. We will do our best to respond to support, feature requests, and community questions as time permits.
+## Spec Kit 本体について
 
-## GitHub Support Policy
+Spec Kit のコア機能・Specify CLI・SDD 方法論に関する質問は、上流の公式リソースへ。
 
-Support for this project is limited to the resources listed above.
+- 上流 Issues: <https://github.com/github/spec-kit/issues>
+- 上流 Discussions: <https://github.com/github/spec-kit/discussions>
+- 公式ドキュメント: <https://github.github.io/spec-kit/>
+
+## ステータス
+
+本フォークは特定用途（Azure Bicep の SI 工程）向けの拡張であり、提供は限定的です。
