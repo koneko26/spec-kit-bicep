@@ -1,31 +1,25 @@
 # Security Policy
 
-Thanks for helping make GitHub safe for everyone.
+> 本リポジトリは [github/spec-kit](https://github.com/github/spec-kit) の**非公式フォーク**です。
 
-GitHub takes the security of our software products and services seriously, including all of the open source code repositories managed through our GitHub organizations, such as [GitHub](https://github.com/GitHub).
+## このフォークで見つかった脆弱性の報告
 
-Even though [open source repositories are outside of the scope of our bug bounty program](https://bounty.github.com/index.html#scope) and therefore not eligible for bounty rewards, we will ensure that your finding gets passed along to the appropriate maintainers for remediation.
+`bicep` Extension / `bicep-si` Preset など、このフォークで追加・変更した部分に脆弱性を見つけた場合：
 
-## Reporting Security Issues
+- **公開 Issue / Discussion / PR では報告しないでください。**
+- このフォークのリポジトリ管理者へ、非公開の経路（リポジトリの Security advisory など）で連絡してください。
+  - 報告先: [koneko26/spec-kit-bicep の Security](https://github.com/koneko26/spec-kit-bicep/security)
 
-If you believe you have found a security vulnerability in any GitHub-owned repository, please report it to us through coordinated disclosure.
+報告には以下を含めてください（分かる範囲で）:
 
-**Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.**
+- 脆弱性の種類
+- 関連するソースファイルのパス
+- 該当箇所（タグ/ブランチ/コミット、または URL）
+- 再現手順・PoC
+- 想定される影響
 
-Instead, please send an email to opensource-security[@]github.com.
+## Spec Kit 本体（上流）の脆弱性
 
-Please include as much of the information listed below as you can to help us better understand and resolve the issue:
+このフォークが追加した部分ではなく、**Spec Kit コア**に起因する脆弱性は、上流の方針に従って報告してください。
 
-- The type of issue (e.g., buffer overflow, SQL injection, or cross-site scripting)
-- Full paths of source file(s) related to the manifestation of the issue
-- The location of the affected source code (tag/branch/commit or direct URL)
-- Any special configuration required to reproduce the issue
-- Step-by-step instructions to reproduce the issue
-- Proof-of-concept or exploit code (if possible)
-- Impact of the issue, including how an attacker might exploit the issue
-
-This information will help us triage your report more quickly.
-
-## Policy
-
-See [GitHub's Safe Harbor Policy](https://docs.github.com/en/site-policy/security-policies/github-bug-bounty-program-legal-safe-harbor#1-safe-harbor-terms)
+- 上流のセキュリティ方針: <https://github.com/github/spec-kit/blob/main/SECURITY.md>
