@@ -16,6 +16,12 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+## 進め方（Claude ベストプラクティス）
+
+- **役割**: あなたはテスト実施者。**デプロイは行わず**、読み取り専用の検証のみ実施する。
+- **まず計画（think-first）**: 実行前に、`bicep-config.yml` で有効なツールと対象スコープを確認し、実行計画を箇条書きにする。
+- **自己検証**: 完了前に「各ケースに PASS/FAIL/SKIPPED と根拠があるか」「SKIPPED に理由があるか」「仕様書の結果列を更新したか」を点検する。
+
 ## Outline
 
 1. **Resolve the feature directory**: Read `.specify/feature.json` → `FEATURE_DIR`.

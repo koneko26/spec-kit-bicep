@@ -24,3 +24,6 @@ description: "[bicep-si] Write the consistency analysis report to 500_tasks/ and
   | ... | | | | | | |
 
 - `FEATURE_DIR/000_index.md` の **500+ 整合性チェック** 行を `✅` に更新する。
+
+**自己検証（Claude ベストプラクティス）**: レポート確定前に「カバレッジ表の全 NF/WAF 柱の行が埋まったか」
+「未カバーを見落としていないか」を点検する。

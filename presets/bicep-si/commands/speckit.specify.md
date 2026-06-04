@@ -20,6 +20,11 @@ spec.md は **機能要件 / 非機能要件** に分けて整理する（`spec-
   要件段階で明記してよい（ただし「Why は要件、How は基本設計」の粒度を保つ）
 - **Success Criteria はインフラ品質**で定義（デプロイ成功・what-if 一致・PSRule 準拠・必須タグ等）
 
+**進め方（Claude ベストプラクティス）**:
+- **入力の手本**: `.specify/extensions/bicep/templates/inputs/specify-input.md` の例に倣って入力を解釈する。
+- **まず計画**: 本文化の前に、入力を機能要件(IF)／非機能要件(NF 9区分)に分類してから書く。
+- **自己検証**: 完了前に「9区分のうち該当するものに具体値が入ったか」「機能/非機能が分離されているか」「Success Criteria がインフラ品質になっているか」を点検する。
+
 ### 1〜. 番号フォルダの足場作り
 
 `FEATURE_DIR`（= `.specify/feature.json` の `feature_directory`）配下に、SI 工程の番号フォルダ

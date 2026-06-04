@@ -21,6 +21,13 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+## 進め方（Claude ベストプラクティス）
+
+- **役割**: あなたは品質保証のテスト設計者。
+- **まず計画（think-first）**: 観点を書く前に、WAF 5本柱それぞれに最低1観点を割り当てる方針を立ててから列挙する。
+- **自己検証**: 完了前に「5本柱すべてがカバーされたか」「各観点が詳細設計に追跡できるか」「冪等性観点があるか」を点検する。
+- **レビュー誘導**: 観点は人間がレビューしやすいよう、ID・対象・合格条件を明確に書く。
+
 ## Outline
 
 1. **Resolve the feature directory**: Read `.specify/feature.json` → `FEATURE_DIR`.

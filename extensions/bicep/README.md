@@ -14,13 +14,18 @@ Input/Output document templates bundled with them.
 
 ## I/O templates (templates/)
 
-The document templates produced by these commands live here and are resolved through the
-Spec Kit template stack (extension priority):
+Input/Output templates live in [templates/](templates/) and are resolved through the Spec Kit
+template stack (extension priority). See the full mapping in [templates/README.md](templates/README.md).
 
-- `basic-design-template.md`
-- `detail-design-template.md`
-- `unit-test-spec-template.md`
+**Output templates** (artifact skeletons):
+- `basic-design-template.md` / `detail-design-template.md` / `unit-test-spec-template.md`
 - `bicep-module-template.bicep` (Bicep best-practice skeleton, referenced during construction)
+
+**Input templates** (input forms + good-input Few-shot examples) under [templates/inputs/](templates/inputs/):
+- `specify-input.md` / `basic-design-input.md` / `detail-design-input.md`
+
+Command prompts follow Claude prompt-engineering best practices: explicit role, think-first
+planning, Few-shot input examples, fixed output format, and a self-verification step.
 
 ## Install
 
