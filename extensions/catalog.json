@@ -31,6 +31,21 @@
         "workflow",
         "core"
       ]
+    },
+    "bicep": {
+      "name": "Bicep SI Phases",
+      "id": "bicep",
+      "version": "0.1.0",
+      "description": "Adds SI engineering phases for Azure Bicep IaC: basic design, detailed design, unit-test design, and unit-test execution (bicep build/lint, what-if, PSRule, ARM-TTK).",
+      "author": "spec-kit-bicep",
+      "repository": "https://github.com/koneko26/spec-kit-bicep",
+      "bundled": true,
+      "tags": [
+        "azure",
+        "bicep",
+        "iac",
+        "si"
+      ]
     }
   }
 }

@@ -1,0 +1,83 @@
+schema_version: "1.0"
+
+preset:
+  id: "bicep-si"
+  name: "Bicep SI Workflow"
+  version: "0.1.0"
+  description: "Tunes the SDD workflow for Azure-best-practice-first IaC built with Bicep, and lays out numbered SI phase folders (000_index + 100-700)."
+  author: "spec-kit-bicep"
+  repository: "https://github.com/koneko26/spec-kit-bicep"
+  license: "MIT"
+
+requires:
+  speckit_version: ">=0.9.0"
+
+provides:
+  templates:
+    # --- Document template overrides (append onto core) ---
+    - type: "template"
+      name: "constitution-template"
+      file: "templates/constitution-template.md"
+      description: "Append the Azure-best-practice-first + Bicep technical policy section"
+      strategy: "append"
+
+    - type: "template"
+      name: "plan-template"
+      file: "templates/plan-template.md"
+      description: "Append the Bicep source layout note and the WAF Constitution Check gate"
+      strategy: "append"
+
+    - type: "template"
+      name: "spec-template"
+      file: "templates/spec-template.md"
+      description: "Append the infra requirements structure (Functional / Non-Functional aligned to WAF)"
+      strategy: "append"
+
+    # --- Command overrides (append onto core) ---
+    - type: "command"
+      name: "speckit.constitution"
+      file: "commands/speckit.constitution.md"
+      description: "Ensure the constitution records the Azure-BP-first -> Bicep technical policy"
+      strategy: "append"
+      replaces: "speckit.constitution"
+
+    - type: "command"
+      name: "speckit.specify"
+      file: "commands/speckit.specify.md"
+      description: "Scaffold the numbered SI phase folders (100-700) and 000_index.md after spec creation"
+      strategy: "append"
+      replaces: "speckit.specify"
+
+    - type: "command"
+      name: "speckit.clarify"
+      file: "commands/speckit.clarify.md"
+      description: "Add Azure-infrastructure-specific clarification dimensions"
+      strategy: "append"
+      replaces: "speckit.clarify"
+
+    - type: "command"
+      name: "speckit.tasks"
+      file: "commands/speckit.tasks.md"
+      description: "Bicep-oriented WBS (module-by-module under 600_build/), construction only; update index"
+      strategy: "append"
+      replaces: "speckit.tasks"
+
+    - type: "command"
+      name: "speckit.analyze"
+      file: "commands/speckit.analyze.md"
+      description: "Write the consistency report to 500_tasks/analysis-report.md; update index"
+      strategy: "append"
+      replaces: "speckit.analyze"
+
+    - type: "command"
+      name: "speckit.implement"
+      file: "commands/speckit.implement.md"
+      description: "Construction only: write Bicep into 600_build/, skip test execution (separate command); update index"
+      strategy: "append"
+      replaces: "speckit.implement"
+
+tags:
+  - "azure"
+  - "bicep"
+  - "iac"
+  - "si"
