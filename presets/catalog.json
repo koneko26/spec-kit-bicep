@@ -25,6 +25,29 @@
         "workflow",
         "core"
       ]
+    },
+    "bicep-si": {
+      "name": "Bicep SI Workflow",
+      "id": "bicep-si",
+      "version": "0.1.0",
+      "description": "Tunes the SDD workflow for Azure-best-practice-first IaC built with Bicep, and lays out numbered SI phase folders (000_index + 100-700).",
+      "author": "spec-kit-bicep",
+      "repository": "https://github.com/koneko26/spec-kit-bicep",
+      "license": "MIT",
+      "bundled": true,
+      "requires": {
+        "speckit_version": ">=0.9.0"
+      },
+      "provides": {
+        "commands": 5,
+        "templates": 2
+      },
+      "tags": [
+        "azure",
+        "bicep",
+        "iac",
+        "si"
+      ]
     }
   }
 }

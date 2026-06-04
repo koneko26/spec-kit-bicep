@@ -1,0 +1,66 @@
+schema_version: "1.0"
+
+extension:
+  id: bicep
+  name: "Bicep SI Phases"
+  version: "0.1.0"
+  description: "Adds SI engineering phases for Azure Bicep IaC: basic design, detailed design, unit-test design, and unit-test execution (bicep build/lint, what-if, PSRule, ARM-TTK)."
+  author: "spec-kit-bicep"
+  repository: "https://github.com/koneko26/spec-kit-bicep"
+  license: MIT
+
+requires:
+  speckit_version: ">=0.9.0"
+  tools:
+    - name: az
+      required: false
+    - name: bicep
+      required: false
+
+provides:
+  commands:
+    - name: speckit.bicep.basic-design
+      file: commands/speckit.bicep.basic-design.md
+      description: "Produce the basic design (Azure architecture, topology, naming, security baseline) -> 200_basic-design/"
+    - name: speckit.bicep.detail-design
+      file: commands/speckit.bicep.detail-design.md
+      description: "Produce the detailed design (Bicep module breakdown, params, tags) and generate plan.md -> 300_detail-design/"
+    - name: speckit.bicep.test-design
+      file: commands/speckit.bicep.test-design.md
+      description: "Produce the unit-test specification (test viewpoints) for human review -> 400_test-design/"
+    - name: speckit.bicep.test
+      file: commands/speckit.bicep.test.md
+      description: "Execute unit tests (bicep build/lint, what-if, PSRule, ARM-TTK) and record results -> 700_unit-test/"
+
+  config:
+    - name: "bicep-config.yml"
+      template: "config-template.yml"
+      description: "Toggles and paths for Bicep unit-test tools"
+      required: false
+
+hooks:
+  after_specify:
+    command: speckit.bicep.basic-design
+    optional: true
+    prompt: "Proceed to basic design (200_basic-design)?"
+    description: "Suggest basic design after specification"
+  after_implement:
+    command: speckit.bicep.test
+    optional: true
+    prompt: "Run unit tests (700_unit-test)?"
+    description: "Suggest unit-test execution after construction"
+
+tags:
+  - "azure"
+  - "bicep"
+  - "iac"
+  - "si"
+
+config:
+  defaults:
+    tests:
+      bicep_build: true
+      bicep_lint: true
+      what_if: true
+      psrule: true
+      arm_ttk: true

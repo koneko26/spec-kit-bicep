@@ -1,0 +1,26 @@
+# Bicep unit-test configuration
+# Toggle each unit-test viewpoint and set tool invocation details.
+# Copied to .specify/extensions/bicep/bicep-config.yml on install.
+
+tests:
+  # Static compilation and linter (Azure CLI / Bicep CLI). No Azure auth required.
+  bicep_build: true
+  bicep_lint: true
+
+  # Deployment diff against a target scope. Requires `az login` and a target
+  # subscription/resource group. Degrades to "skipped" when auth is unavailable.
+  what_if: true
+
+  # PSRule for Azure: best-practice rule-based validation.
+  # Requires PowerShell + PSRule.Rules.Azure module.
+  psrule: true
+
+  # ARM Template Test Toolkit: template quality checks (runs on compiled ARM JSON).
+  arm_ttk: true
+
+# Optional: default deployment target used by what-if (leave empty to be prompted).
+# Do NOT commit real subscription IDs or secrets here.
+target:
+  scope: ""            # one of: subscription | resourceGroup | managementGroup | tenant
+  resource_group: ""
+  location: ""
