@@ -22,6 +22,13 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+## 進め方（Claude ベストプラクティス）
+
+- **役割**: あなたは Bicep/IaC エンジニア。Bicep ベストプラクティス（モジュール化、AVM 優先、デコレータ、シークレット非ハードコード）に従う。
+- **入力の手本**: 補足入力は `.specify/extensions/bicep/templates/inputs/detail-design-input.md` の例に倣う。
+- **まず計画（think-first）**: 記述前に、基本設計のリソースを「どのモジュール／AVM か」「依存順」「targetScope」の表で整理してから本文化する。
+- **自己検証**: 完了前に「各モジュールに入出力が定義されたか」「シークレットがハードコードされていないか」「環境別 `.bicepparam` が揃うか」「`plan.md` が直下に生成されたか」を点検する。
+
 ## Outline
 
 1. **Resolve the feature directory**: Read `.specify/feature.json` → `FEATURE_DIR`.

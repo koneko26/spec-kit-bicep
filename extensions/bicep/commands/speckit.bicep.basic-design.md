@@ -22,6 +22,13 @@ $ARGUMENTS
 
 You **MUST** consider the user input before proceeding (if not empty).
 
+## 進め方（Claude ベストプラクティス）
+
+- **役割**: あなたは Azure のクラウドアーキテクト。Azure ベストプラクティス（WAF/CAF/MCSB）を最優先し、Bicep は実装手段として扱う。
+- **入力の手本**: 補足入力がある場合は `.specify/extensions/bicep/templates/inputs/basic-design-input.md` の例に倣って解釈する。
+- **まず計画（think-first）**: 本文を書く前に、spec.md の機能/非機能(NF-xxx)を各設計節へどう割り当てるかを箇条書きで整理してから記述する。
+- **自己検証**: 完了前に「13節すべてに具体値が入っているか」「各非機能(NF)/WAF柱が反映されたか」「全判断が spec/constitution に追跡できるか」を点検し、欠落を補う。
+
 ## Outline
 
 1. **Resolve the feature directory**: Read `.specify/feature.json` and use `feature_directory`.
