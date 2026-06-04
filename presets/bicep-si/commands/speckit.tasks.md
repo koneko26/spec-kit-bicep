@@ -10,10 +10,12 @@ description: "[bicep-si] Bicep-oriented WBS (construction only) and index update
 ### WBS 生成の観点（Bicep / 構築フェーズ）
 
 - 構成は **`600_build/` 配下の Bicep 構築作業**に対応させる。典型的な並び:
-  1. Setup: `600_build/` 雛形、`main.bicep` の `targetScope`、共通変数・タグ、`.bicepparam`
-  2. Foundational: 共有モジュール（ネットワーク、ID/RBAC、Key Vault、Log Analytics 等）
+  1. Setup: `600_build/` 雛形、`main.bicep` の `targetScope`、共通変数・タグ、環境別 `.bicepparam`
+  2. Foundational: 共有モジュール（ネットワーク、ID/RBAC、Key Vault、Log Analytics 等）。AVM 優先で選定。
   3. ユーザストーリー/ドメインごと: 各 `modules/<domain>-<resource>.bicep` の実装 → `main.bicep` への結線
-  4. Polish: パラメータ整理、`@description` 補完、ドキュメント更新
+  4. **横断的（WAF）タスク**: 診断設定の付与（→Log Analytics）、Azure Policy 割当、バックアップ/冗長構成、
+     必須タグ・RBAC の適用、アラート設定 — 設計の非機能を構築タスクに落とす
+  5. Polish: パラメータ整理、`@description` 補完、ドキュメント更新
 - 各タスクの**ファイルパスは `600_build/...` を明記**する。
 - **単体テスト実施タスクは tasks.md に含めない。** テストは別工程（`/speckit.bicep.test-design` で観点設計、`/speckit.bicep.test` で実施）に分離する。tasks.md は構築タスクに集中させる。
 - 詳細設計（`300_detail-design/detail-design.md`）のモジュール一覧・依存関係を直接の入力として用いる。

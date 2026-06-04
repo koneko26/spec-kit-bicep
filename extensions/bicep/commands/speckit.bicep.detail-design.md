@@ -50,11 +50,11 @@ You **MUST** consider the user input before proceeding (if not empty).
 
 ## Required Sections (Bicep best-practice oriented)
 
-1. **モジュール分割方針** — `main.bicep` orchestration + per-resource/per-domain modules under `modules/`; consider Azure Verified Modules (AVM) where appropriate.
+1. **モジュール分割方針 (AVM 優先)** — `main.bicep` orchestration + modules under `modules/`. **Prefer Azure Verified Modules (AVM)**; only hand-write a module when no suitable AVM exists, stating why.
 2. **モジュール一覧と責務** — table of module → resources → inputs (params) → outputs.
-3. **パラメータ設計** — `@description`/`@allowed`/`@secure` decorators, `.bicepparam` per environment, no hardcoded secrets (use Key Vault references).
+3. **パラメータ設計** — `@description`/`@allowed`/`@secure` decorators, **`.bicepparam` per environment (dev/stg/prod matrix)**, no hardcoded secrets (use Key Vault references).
 4. **変数・命名・タグ実装** — how the naming convention and mandatory tags from basic design are implemented (e.g., `uniqueString`, `resourceGroup().location`).
-5. **リソース個別設定** — SKU, networking, identity, diagnostic settings per resource.
+5. **リソース個別設定** — per resource: SKU, networking, identity, diagnostics, **backup/redundancy, autoscale, alerts** (carry the basic-design non-functional decisions down to concrete settings).
 6. **依存関係** — implicit vs explicit `dependsOn`, module ordering.
 7. **デプロイスコープ** — `targetScope` (resourceGroup/subscription/managementGroup/tenant) and rationale.
 8. **Source Layout** — see below.

@@ -24,7 +24,13 @@ provides:
     - type: "template"
       name: "plan-template"
       file: "templates/plan-template.md"
-      description: "Append the Bicep source layout note (source lives in 600_build/)"
+      description: "Append the Bicep source layout note and the WAF Constitution Check gate"
+      strategy: "append"
+
+    - type: "template"
+      name: "spec-template"
+      file: "templates/spec-template.md"
+      description: "Append the infra requirements structure (Functional / Non-Functional aligned to WAF)"
       strategy: "append"
 
     # --- Command overrides (append onto core) ---
@@ -41,6 +47,13 @@ provides:
       description: "Scaffold the numbered SI phase folders (100-700) and 000_index.md after spec creation"
       strategy: "append"
       replaces: "speckit.specify"
+
+    - type: "command"
+      name: "speckit.clarify"
+      file: "commands/speckit.clarify.md"
+      description: "Add Azure-infrastructure-specific clarification dimensions"
+      strategy: "append"
+      replaces: "speckit.clarify"
 
     - type: "command"
       name: "speckit.tasks"

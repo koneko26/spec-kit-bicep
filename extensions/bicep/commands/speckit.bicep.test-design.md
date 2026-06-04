@@ -39,7 +39,10 @@ You **MUST** consider the user input before proceeding (if not empty).
    - **PSRule for Azure** — passes targeted best-practice rules (naming, security, diagnostics, identity).
    - **ARM-TTK** — template-quality checks pass on the compiled ARM JSON.
    Also add **design-derived viewpoints**: naming-convention conformance, mandatory tags present,
-   NSG/firewall rules, parameter boundary values, dependency ordering.
+   NSG/firewall rules, parameter boundary values, dependency ordering, **idempotency (a second
+   what-if shows zero diff)**, encryption/network-isolation, and backup/redundancy settings.
+   **Tag each case with the WAF pillar it covers and ensure all 5 pillars (reliability, security,
+   cost, operational excellence, performance) have at least one case.**
 
 5. **Write** to `FEATURE_DIR/400_test-design/unit-test-spec.md` (create the folder if needed).
    Each test case MUST have: ID (UT-001…), 観点(viewpoint), 対象(module/resource), 手法(tool),

@@ -39,8 +39,8 @@
         "speckit_version": ">=0.9.0"
       },
       "provides": {
-        "commands": 5,
-        "templates": 2
+        "commands": 6,
+        "templates": 3
       },
       "tags": [
         "azure",
